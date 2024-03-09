@@ -4,6 +4,10 @@
     <script>
         function ShowImagePreview(input) {
             if (input.files && input.files[0]) {
+                if (input.files[0].size > 1048576) { // 1MB in bytes
+                    alert("Image size exceeds 1MB. Please choose a smaller image.");
+                    return;
+                }
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     $('#pagecontent_imagePreview').prop('src', e.target.result);
@@ -14,6 +18,10 @@
 
         function ShowThumbnailImagePreview(input) {
             if (input.files && input.files[0]) {
+                if (input.files[0].size > 1048576) { // 1MB in bytes
+                    alert("Image size exceeds 1MB. Please choose a smaller image.");
+                    return;
+                }
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     $('#pagecontent_ThumbnailimagePreview').prop('src', e.target.result);
@@ -24,6 +32,10 @@
 
         function ShowInnerImagePreview(input) {
             if (input.files && input.files[0]) {
+                if (input.files[0].size > 1048576) { // 1MB in bytes
+                    alert("Image size exceeds 1MB. Please choose a smaller image.");
+                    return;
+                }
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     $('#pagecontent_InnerimagePreview').prop('src', e.target.result);
@@ -506,7 +518,7 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td class="text-center"><% # Container.ItemIndex + 1 %>    </td>
+                            <td class="text-center"><%#Container.ItemIndex + 1 %></td>
 
                              <td class="text-center">
                                 <asp:Label ID="lblBlogCategory" Text='<%#Eval("category_name")%>' runat="server"></asp:Label>

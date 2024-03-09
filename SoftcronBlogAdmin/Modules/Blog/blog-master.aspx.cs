@@ -112,6 +112,7 @@ namespace Healing2Peace.Modules.Blog
                         //btnSubmit.Visible = true;
                         //btnUpdate.Visible = false;
 
+
                         string filename = Path.GetFileName(fuUploadedFile.PostedFile.FileName);
                         string contentType = fuUploadedFile.PostedFile.ContentType;
 
