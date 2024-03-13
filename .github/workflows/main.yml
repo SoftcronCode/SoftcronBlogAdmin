@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: FTP Deployment
 
 on:
   push:
@@ -6,43 +6,17 @@ on:
       - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Restore dependencies
-        run: nuget restore SoftcronBlogAdmin.sln
-
-      - name: Add missing target
-        run: |
-          dotnet add package Microsoft.Build.Microsoft.VisualStudio.Web.targets --version 17.2.0  # Replace with compatible version
-
-      - name: Publish
-        run: dotnet publish -c Release SoftcronBlogAdmin.sln
-
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
-
   deploy:
     runs-on: ubuntu-latest
-    needs: build  # Ensures deployment happens after successful build
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      
       - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # Update if a newer version exists
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: '/badmin.softcron.com'
-          local-dir: './publish'
-
-      - name: Extract files
-        run: |
-          ssh user@server 'cd /badmin.softcron.com && unzip -o publish.zip'
