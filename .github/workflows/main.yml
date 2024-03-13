@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -16,8 +16,7 @@ jobs:
       - name: Restore dependencies
         run: nuget restore SoftcronBlogAdmin.sln
 
-      - name: Build
-        run: msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /t:publish SoftcronBlogAdmin.sln
+      # No need for msbuild step (handled by dotnet publish)
 
       - name: Publish
         run: dotnet publish -c Release SoftcronBlogAdmin.sln
@@ -27,13 +26,12 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    
     needs: build
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
