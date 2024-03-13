@@ -1,4 +1,4 @@
-name: FTP Deployment
+name: Build and Deploy
 
 on:
   push:
@@ -6,8 +6,34 @@ on:
       - master
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '4.8.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Publish
+        run: dotnet publish -c Release -o ./publish
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+
   deploy:
     runs-on: ubuntu-latest
+    
+    needs: build
     
     steps:
       - name: Checkout code
@@ -19,4 +45,9 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: '/badmin.softcron.com/'
+          server-dir: '/badmin.softcron.com'
+          local-dir: './publish'
+
+      - name: Extract files
+        run: |
+          ssh user@server 'cd /path/to/httpdocs/ && unzip -o publish.zip'
