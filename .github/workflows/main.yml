@@ -13,16 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '4.8.x'
-
       - name: Restore dependencies
-        run: dotnet restore
+        run: nuget restore SoftcronBlogAdmin.sln
 
       - name: Build
-        run: dotnet build --no-restore
+        run: msbuild /p:Configuration=Release SoftcronBlogAdmin.sln
 
       - name: Publish
         run: dotnet publish -c Release -o ./publish
@@ -50,4 +45,4 @@ jobs:
 
       - name: Extract files
         run: |
-          ssh user@server 'cd /path/to/httpdocs/ && unzip -o publish.zip'
+          ssh user@server 'cd /badmin.softcron.com && unzip -o publish.zip'
