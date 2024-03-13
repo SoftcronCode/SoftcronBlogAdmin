@@ -16,7 +16,9 @@ jobs:
       - name: Restore dependencies
         run: nuget restore SoftcronBlogAdmin.sln
 
-      # No need for msbuild step (handled by dotnet publish)
+      - name: Add missing target
+        run: |
+          dotnet add package Microsoft.Build.Microsoft.VisualStudio.Web.targets --version 17.2.0  # Replace with compatible version
 
       - name: Publish
         run: dotnet publish -c Release SoftcronBlogAdmin.sln
@@ -26,14 +28,14 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: build  # Ensures deployment happens after successful build
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # Update if a newer version exists
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
