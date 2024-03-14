@@ -259,7 +259,7 @@ NOTE: use percentage font sizes or else old IE chokes
 .fc-state-default {
     background-color: #6ad2eb;
     color: #ffffff;
-    border: 1px solid #40e0d0;
+    border: 1px solid #394263;
 }
 
 .fc-state-hover,
@@ -267,17 +267,17 @@ NOTE: use percentage font sizes or else old IE chokes
 .fc-state-active,
 .fc-state-disabled {
     color: #ffffff;
-    background-color: #40e0d0;
+    background-color: #394263;
 }
 
 .fc-state-hover {
     text-decoration: none;
-    background-color: #40e0d0;
+    background-color: #394263;
 }
 
 .fc-state-down,
 .fc-state-active {
-    background-color: #40e0d0;
+    background-color: #394263;
     border-color: #1593b3;
     outline: 0;
 }
@@ -1758,7 +1758,7 @@ MIT License
     left: -9999px;
     z-index: 1041;
     width: 100%;
-    border: 1px solid #40e0d0;
+    border: 1px solid #394263;
     border-top: 0;
     background: #ffffff;
     border-bottom-left-radius: 4px;
@@ -1904,7 +1904,7 @@ MIT License
     cursor: default;
 }
 .chosen-container .chosen-results li.highlighted {
-    background-color: #40e0d0;
+    background-color: #394263;
     color: #fff;
 }
 .chosen-container .chosen-results li.no-results {
@@ -1962,20 +1962,20 @@ MIT License
 .chosen-container-multi .chosen-choices li.search-field .default {
     color: #999;
 }
-.chosen-container-multi .chosen-choices li.search-choice {
-    position: relative;
-    margin: 7px 0 6px 5px;
-    padding: 2px 20px 2px 5px;
-    background: #f9fafc;
-    border: 1px solid #40e0d0;
-    background-color: #40e0d0;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 12px;
-    border-radius: 2px;
-    line-height: 13px;
-    cursor: default;
-}
+    .chosen-container-multi .chosen-choices li.search-choice {
+        position: relative;
+        margin: 7px 0 6px 5px;
+        padding: 2px 20px 2px 5px;
+        background: #f9fafc;
+        border: 1px solid #394263;
+        background-color: #394263;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 12px;
+        border-radius: 2px;
+        line-height: 13px;
+        cursor: default;
+    }
 .chosen-container-multi .chosen-choices li.search-choice span {
     word-wrap: break-word;
 }
@@ -2020,10 +2020,10 @@ MIT License
 /* @end */
 /* @group Active  */
 .chosen-container-active .chosen-single {
-    border: 1px solid #40e0d0;
+    border: 1px solid #394263;
 }
 .chosen-container-active.chosen-with-drop .chosen-single {
-    border: 1px solid #40e0d0;
+    border: 1px solid #394263;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -2035,7 +2035,7 @@ MIT License
     background-position: -18px 2px;
 }
 .chosen-container-active .chosen-choices {
-    border: 1px solid #40e0d0;
+    border: 1px solid #394263;
 }
 .chosen-container-active.chosen-with-drop .chosen-choices {
     border-bottom-left-radius: 0;
@@ -2405,7 +2405,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
-    background-color: #40e0d0;
+    background-color: #394263;
     color: #ffffff;
 }
 .datepicker table tr td.active:hover,
@@ -2428,7 +2428,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 .datepicker table tr td.active:hover[disabled],
 .datepicker table tr td.active.disabled[disabled],
 .datepicker table tr td.active.disabled:hover[disabled] {
-    background-color: #40e0d0;
+    background-color: #394263;
 }
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
@@ -2485,7 +2485,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 .datepicker table tr td span.active:hover[disabled],
 .datepicker table tr td span.active.disabled[disabled],
 .datepicker table tr td span.active.disabled:hover[disabled] {
-    background-color: #40e0d0;
+    background-color: #394263;
 }
 .datepicker table tr td span.active:active,
 .datepicker table tr td span.active:hover:active,
@@ -5001,7 +5001,7 @@ Contributors https://github.com/jdewit/bootstrap-timepicker/graphs/contributors
 }
 .bootstrap-timepicker-widget table td a:hover {
     text-decoration: none;
-    background-color: #40e0d0;
+    background-color: #394263;
     color: #ffffff;
 }
 .bootstrap-timepicker-widget table td a i {
@@ -5047,8 +5047,8 @@ div.tagsinput {
 }
 
 div.tagsinput span.tag {
-    border: 1px solid #40e0d0;
-    background-color: #40e0d0;
+    border: 1px solid #394263;
+    background-color: #394263;
     color: #ffffff;
     font-weight: 600;
     border-radius: 2px;
@@ -5329,12 +5329,12 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 .slider-selection {
     position: absolute;
-    background-color: #40e0d0;
+    background-color: #394263;
     border-radius: 4px;
 }
 
 .slider-selection.tick-slider-selection {
-    background-color: #40e0d0;
+    background-color: #394263;
 }
 
 .slider-track-low,
@@ -5449,7 +5449,7 @@ http://ricostacruz.com/nprogress
 }
 
 #nprogress .bar {
-    background-color: #40e0d0;
+    background-color: #394263;
     position: fixed;
     z-index: 1050;
     top: 0;
@@ -5465,7 +5465,7 @@ http://ricostacruz.com/nprogress
     right: 0px;
     width: 100px;
     height: 100%;
-    box-shadow: 0 0 10px #40e0d0, 0 0 5px #40e0d0;
+    box-shadow: 0 0 10px #394263, 0 0 5px #394263;
     opacity: 1.0;
     -webkit-transform: rotate(3deg) translate(0px, -4px);
     -moz-transform: rotate(3deg) translate(0px, -4px);
@@ -5488,8 +5488,8 @@ http://ricostacruz.com/nprogress
     width: 20px;
     height: 20px;
     border:  solid 2px transparent;
-    border-top-color:  #40e0d0;
-    border-left-color: #40e0d0;
+    border-top-color:  #394263;
+    border-left-color: #394263;
     border-radius: 10px;
     -webkit-animation: nprogress-spinner 400ms linear infinite;
     -moz-animation:    nprogress-spinner 400ms linear infinite;
@@ -6093,7 +6093,7 @@ http://ricostacruz.com/nprogress
     color: #fff;
     font-size: 13px;
     font-weight: 600;
-    background-color: #40e0d0;
+    background-color: #394263;
     border: none;
     border-radius: 3px;
 }
@@ -6108,7 +6108,7 @@ http://ricostacruz.com/nprogress
     border-color: #dbe1e8;
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #40e0d0;
+    background-color: #394263;
 }
 .select2-container--default .select2-search--inline .select2-search__field {
     padding-right: 0;
@@ -6129,9 +6129,9 @@ http://ricostacruz.com/nprogress
 .select2-container--default.select2-container--open .select2-selection--single,
 .select2-container--default.select2-container--open .select2-selection--multiple,
 .select2-container--default.select2-container--focus.select2-container--open .select2-selection--multiple {
-    border-color: #40e0d0;
+    border-color: #394263;
 }
 
 .select2-container--default.select2-container--focus .select2-selection--single {
-    border-color: #40e0d0;
+    border-color: #394263;
 }

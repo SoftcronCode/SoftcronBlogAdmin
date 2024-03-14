@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html >
+<html>
 <head runat="server">
     <meta charset="utf-8" />
 
@@ -17,11 +17,11 @@
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
     <link rel="shortcut icon" href="Content/img/favicon.png" />
-    
+
     <!-- Stylesheets -->
     <!-- Bootstrap is included in its original form, unaltered -->
     <link rel="stylesheet" href="Content/css/bootstrap.min.css" />
-    
+
     <!-- Related styles of various icon packs and plugins -->
     <link rel="stylesheet" href="Content/css/plugins.css" />
 
@@ -40,28 +40,28 @@
     <script src="Content/js/plugins.js"></script>
     <script src="Content/js/app.js"></script>
 
-     <script src="Custom/toast.js"></script>
+    <script src="Custom/toast.js"></script>
     <script src="Custom/Validate.js"></script>
     <!-- Modernizr (browser feature detection library) -->
     <script src="Content/js/vendor/modernizr.min.js"></script>
-    
-        <style type="text/css">
-            .color-overlay {
-               position: absolute;
-               top: 0;
-               left: 0;
-               width: 100%;
-               height: 100%;
-               background-color: lightblue;
-               opacity: 0.9;
-            }
-        </style>
+
+    <style type="text/css">
+        .color-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: lightblue;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
 
-             <!-- Login Full Background -->
+            <!-- Login Full Background -->
             <!-- For best results use an image with a resolution of 1280x1280 pixels (prefer a blurred image for smaller file size) -->
             <img src="Content/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow" />
             <!-- END Login Full Background -->
@@ -70,9 +70,9 @@
             <div id="login-container" class="animation-fadeIn">
                 <!-- Login Title -->
                 <div class="login-title text-center">
-                    <h1><i class="gi gi-flash"></i> <strong>Softcron World</strong><br /> 
-                  <%-- <img src="Content/img/white-logo.png" width="180x180"/>--%>
-                      <small>Please <strong>Login</strong></small></h1>
+                    <h1><i class="gi gi-flash"></i><strong>Softcron World</strong><br />
+                        <%-- <img src="Content/img/white-logo.png" width="180x180"/>--%>
+                        <small>Please <strong>Login</strong></small></h1>
                 </div>
                 <!-- END Login Title -->
 
@@ -87,9 +87,9 @@
                                     <div class="col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                                            <input name="user" type="text" id="email"  class="form-control input-lg" placeholder="Login Id" tabindex="1" />
+                                            <input name="user" type="text" id="email" class="form-control input-lg" placeholder="Login Id" tabindex="1" />
                                             <%--<label for="email">Email</label>--%>
-                                           <%--  onkeydown="enter()"--%>
+                                            <%--  onkeydown="enter()"--%>
                                         </div>
                                     </div>
                                 </div>
@@ -98,6 +98,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
                                             <input type="password" id="password" name="password" maxlength="20" class="form-control input-lg" placeholder="Password" aria-pressed="false" tabindex="2" />
+                                            <i class="toggle-password fa fa-eye"></i>
                                             <%--<label for="password">Password</label>--%>
                                             <asp:Label ID="lblError" runat="server" Style="color: #fff" Visible="false"></asp:Label>
                                         </div>
@@ -112,8 +113,8 @@
                         <div class="form-group form-actions">
                             <div class="col-xs-4">
                                 <label>
-                                    
-                                    <asp:CheckBox ID="val_terms" runat="server"   Visible="false"  />
+
+                                    <asp:CheckBox ID="val_terms" runat="server" Visible="false" />
                                     <span></span>
                                 </label>
                             </div>
@@ -133,7 +134,7 @@
                     </div>
                     <!-- END Login Form -->
                     <!-- Register Form -->
-                   
+
                     <!-- END Register Form -->
                 </div>
                 <!-- END Login Block -->
@@ -163,5 +164,18 @@
 
         </div>
     </form>
+
+
+    <script>
+        $(".toggle-password").click(function () {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            input = $(this).parent().find("input");
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>
 </body>
 </html>

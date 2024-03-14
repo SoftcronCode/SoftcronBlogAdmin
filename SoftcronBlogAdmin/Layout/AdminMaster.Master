@@ -272,7 +272,7 @@
                                         <li>
                                             <div class="btn-group btn-group-justified btn-group-sm">
                                                 <a href="javascript:void(0)" class="btn btn-primary" id="options-header-default">Light</a>
-                                                <a href="javascript:void(0)" class="btn btn-primary" id="options-header-inverse">Dark</a>
+                                                <a href="javascript:void(0)" class="btn btn-primary" id="options-header-inverse">Dark</a>softcron Technology
                                             </div>
                                         </li>
                                         <li class="dropdown-header text-center">Page Style</li>
